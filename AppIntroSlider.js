@@ -12,7 +12,8 @@ import {
 } from 'react-native';
 import DefaultSlide from './DefaultSlide';
 
-const { width, height } = Dimensions.get('window');
+let { width, height } = Dimensions.get('window');
+if (Platform.OS === 'android') height = height + 60;
 
 const isIphoneX =
   Platform.OS === 'ios' && !Platform.isPad && !Platform.isTVOS && (height === 812 || width === 812);
